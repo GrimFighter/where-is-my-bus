@@ -1,0 +1,31 @@
+.radio_con{
+    background-color: rgb(33, 35, 41);
+    height: 45px;
+    display: grid;
+    border-radius: 9px;
+    overflow: hidden;
+   
+    border: 1px solid rgb(45, 49, 54);
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+
+    
+    .cus_radio{
+        /* padding: 0 20px; */
+        
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        margin: 2px;
+        border-radius: 7px;
+        font-weight: 500;
+
+        input[type=radio]{
+            display: none;
+        }
+
+    }
+    .cus_radio:has(input[type=radio]:checked){
+        background-color: rgb(45, 49, 54);
+        
+    }
+}

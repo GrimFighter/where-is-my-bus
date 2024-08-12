@@ -1,0 +1,24 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+.app{
+    display: grid;
+
+    .header{
+        display: flex;
+        gap: 10px;
+        font-size: xx-large;
+        padding: 20px;
+        font-family: "Pacifico", cursive;
+        font-weight: 400;
+        font-style: normal;
+        align-content: space-around;
+        justify-content: center;
+        align-items: center;
+    
+        img{
+            height:45px;
+            width: 45px;
+        }
+    }
+
+}

@@ -1,0 +1,37 @@
+.bus_list{
+    display: grid;
+    gap: 15px;
+    font-size: large;
+    padding: 20px;
+    
+
+    .bus_row{
+        display: grid;
+     border-radius: 10px;
+     background-color: rgba(128, 128, 128, 0.2);
+    }
+    .bus_row_item{
+        display:grid;
+            
+            text-align: center;
+            gap: 15px;
+            padding: 15px;
+            align-items: center;
+            font-size: x-large;
+            
+       
+
+    }
+    .bus_row_item_spl{
+        display:grid;
+        grid-template-columns: 3fr 0.5fr 3fr;
+        text-align: center;
+        gap: 15px;
+        padding: 15px;
+        align-items: center;
+        font-size: large;
+        
+
+   
+    }
+}

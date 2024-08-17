@@ -1,4 +1,4 @@
-
+![RouteRiot Logo](https://github.com/GrimFighter/where-is-my-bus/blob/985a5fa6931075eb51053179b5aa90af2a3c3279/public/Designer-removebg-preview.png)
 
 # RouteRiot
 

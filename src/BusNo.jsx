@@ -18,7 +18,8 @@ function BusNo ()
 
         busData.forEach( ( busNames ) =>
         {
-            if ( busNames.busNo ) arr.add( busNames.busNo );
+            if ( busNames.busNo ) { arr.add( busNames.busNo ); }
+            
         } );
 
         return arr;
@@ -36,7 +37,6 @@ function BusNo ()
         e.preventDefault();
         setLocalItem();
         const busno_ = busNo.replace( "/", "_" );
-        // console.log( temp );
         navigate( `/search/businfo/${ busno_ }` );
 
     };
@@ -128,7 +128,7 @@ function BusNo ()
                 <button type="submit">Search</button>
             </form>
 
-            {busNoH.length > 0 && <div className="history_bus">
+            { busNoH.length > 0 && <div className="history_bus">
                 <p>Recent Searches</p>
                 <div className="history_list_bus">
                     { busNoH?.map( ( item, index ) =>
@@ -136,12 +136,12 @@ function BusNo ()
                         let tmp = item.busno.replace( "/", "_" );
                         return (
                             <p className="hl_item_bus" key={ index } onClick={ () => navigate( `/search/businfo/${ tmp }` ) }>
-                                <DirectionsBusFilledIcon/> { item.busno }
+                                <DirectionsBusFilledIcon /> { item.busno }
                             </p>
                         );
                     } ) }
                 </div>
-            </div>}
+            </div> }
         </>
     );
 

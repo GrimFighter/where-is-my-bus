@@ -9,7 +9,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 export default function BusList ()
 {
     const { src, dest } = useParams();
-    console.log( src, dest );
+    // console.log( src, dest );
     function handleRouteSearch ( source, destination )
     {
         let res = [];
@@ -44,11 +44,12 @@ export default function BusList ()
             { handleRouteSearch( src, dest ).length > 0 ? (
                 handleRouteSearch( src, dest ).map( ( e, i ) =>
                 {
-                    let tmp = e.busNo?.replace( "/", "_" );
+                    let tmp;
+                    if ( e.busRouteName === null ) { tmp = e.busNo?.replace( "/", "_" ); } else { tmp = e.busRouteName; }
                     return (
-                        <Link to={ `../businfo/${ tmp }` } className="bus_row" key={ i }>
-                            <p className="bus_row_item">{ e.busNo || e.busRouteName}</p>
-                            <p className="bus_row_item_spl">{ e.route.from } 
+                        <Link to={ `../businfo/${ tmp }/${src}/${dest}` } className="bus_row" key={ i }>
+                            <p className="bus_row_item">{ e.busNo || e.busRouteName }</p>
+                            <p className="bus_row_item_spl">{ e.route.from }
                                 <ArrowForwardIcon fontSize="small" />
                                 { e.route.to }</p>
                         </Link>

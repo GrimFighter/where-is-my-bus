@@ -23,7 +23,7 @@ export default function InputPlace ( { label, sugArr, value, updateValue, ...pro
                 {
                     local_array?.map( ( e, i ) => (
                         <div key={ i + 10 } className='sug_row_local' onClick={ () => updateValue( local_array[ i ] ) }>
-                            <p>{ e }</p>
+                            <p >{ e }</p>
                             <div className="sel" onClick={ () => updateValue( local_array[ i ] ) }>
                                 <HistoryIcon fontSize='small' />
                             </div>

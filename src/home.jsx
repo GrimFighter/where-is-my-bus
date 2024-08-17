@@ -4,7 +4,7 @@ import BusNO from "./BusNo";
 import BusRoute from "./BusRoute";
 import StyledRadio, { Radio } from "./component/StyledRadio";
 import "./home.css";
-
+import Footer from "./Footer";
 
 export default function Home ()
 {
@@ -28,6 +28,7 @@ export default function Home ()
 				</StyledRadio>
 			</div>
 			<>	{ mode ? <><BusRoute />  </> : <><BusNO />  </> }</>
+			
 		</>
 
 	);

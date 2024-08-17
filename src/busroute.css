@@ -9,8 +9,11 @@
         padding: 10px 18px;
         text-align: center;
         border-radius: 6px;
+        cursor: pointer;
+        
 
     }
+    
 }
 .input_con{
     display: grid;
@@ -26,6 +29,8 @@
             background-color: rgba(128, 128, 128, 0.2);
             border: 1px solid rgba(128, 128, 128, 0.5);
             border-radius: 5px;
+
+            text-transform: capitalize;
             
         }
         input:focus{

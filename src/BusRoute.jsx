@@ -49,12 +49,21 @@ function BusRoute ()
 		let local_items = localStorage.getItem( "placeList" )?.split( "," ) || [];
 
 		// Remove source and destination if they exist in the array
-		removeItem( local_items, formData.source );
-		removeItem( local_items, formData.destination );
+
+		local_items = local_items.filter( ( item ) => item !== formData.source && item !== formData.destination );
+
 
 		// Add the source and destination to the beginning of the array
-		local_items.unshift( formData.source );
-		local_items.unshift( formData.destination );
+		if ( formData.source !== formData.destination )
+		{
+			local_items.unshift( formData.source );
+			local_items.unshift( formData.destination );
+		} else
+		{
+			local_items.unshift( formData.source );
+
+
+		}
 
 		// If the array length exceeds 6, remove the oldest searches (from the end)
 		while ( local_items.length > 6 )
@@ -65,15 +74,15 @@ function BusRoute ()
 		// Store the updated list back in localStorage
 		localStorage.setItem( "placeList", local_items.toString() );
 
-		function removeItem ( arr, value )
-		{
-			const index = arr.indexOf( value );
-			if ( index > -1 )
-			{
-				arr.splice( index, 1 );
-			}
-			return arr;
-		}
+		// function removeItem ( arr, value )
+		// {
+		// 	const index = arr.indexOf( value );
+		// 	if ( index > -1 )
+		// 	{
+		// 		arr.splice( index, 1 );
+		// 	}
+		// 	return arr;
+		// }
 
 		let recentSearches = JSON.parse( localStorage.getItem( "routeHistory" ) ) || [];
 
@@ -147,19 +156,19 @@ function BusRoute ()
 			<button type="submit">Search</button>
 		</form>
 
-		{formDataH.length > 0 && <div className="history">
+		{ formDataH.length > 0 && <div className="history">
 			<p>Recent Searches</p>
 			<div className="history_list">
 				{ formDataH?.map( ( item, index ) => (
 
 					<div className="hl_item" key={ index }
 						onClick={ () => navigate( `/search/route/${ item.source }/${ item.destination }` ) }>
-						
-						{ item.source } <ArrowForwardIcon fontSize="small"/> { item.destination }
+
+						{ item.source } <ArrowForwardIcon fontSize="small" /> { item.destination }
 					</div>
 				) ) }
 			</div>
-		</div>}
+		</div> }
 	</>
 	);
 }
